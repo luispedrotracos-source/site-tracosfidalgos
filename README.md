@@ -1,12 +1,13 @@
 # Site Traços Fidalgos
 
-Site institucional premium da Traços Fidalgos, preparado para publicação em GitHub Pages.
+Site premium multi-idioma (PT/EN/FR), mobile-first, com catálogos separados e domínio `tracosfidalgos.pt`.
 
-## Publicação no GitHub Pages
+## GitHub Pages
 
-1. Abrir o repositório no GitHub.
-2. Ir a **Settings → Pages**.
-3. Em **Build and deployment**, escolher Source: **Deploy from a branch**, Branch: **main**, Folder: **/root**.
-4. Guardar.
+- Branch: `main`
+- Folder: `/`
+- Custom domain: `tracosfidalgos.pt`
 
-URL esperada: `https://luispedrotracos-source.github.io/site-tracosfidalgos/`
+## DNS
+
+Apex `@`: GitHub Pages IPs. `www`: CNAME para `luispedrotracos-source.github.io`.
