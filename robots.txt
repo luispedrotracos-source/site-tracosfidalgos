@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luispedrotracos-source.github.io/site-tracosfidalgos/sitemap.xml
