@@ -1,0 +1,14 @@
+<svg width="640" height="180" viewBox="0 0 640 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Traços Fidalgos — Confeção Premium em Portugal">
+  <rect width="640" height="180" rx="18" fill="#F8F3EA"/>
+  <g transform="translate(42 34)">
+    <rect x="0" y="0" width="112" height="112" rx="56" fill="#15110E"/>
+    <path d="M26 35H62V47H50V82H38V47H26V35Z" fill="#F8F3EA"/>
+    <path d="M66 35H91V47H78V56H90V68H78V82H66V35Z" fill="#C5A15A"/>
+  </g>
+  <g transform="translate(184 40)">
+    <text x="0" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" letter-spacing="1.5" fill="#15110E">TRAÇOS FIDALGOS</text>
+    <line x1="0" y1="58" x2="390" y2="58" stroke="#C5A15A" stroke-width="2"/>
+    <text x="0" y="88" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2.5" fill="#5F564B">CONFEÇÃO PREMIUM EM PORTUGAL</text>
+    <text x="0" y="113" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="1.8" fill="#8B7A5B">FASHION PRODUCTION PARTNER</text>
+  </g>
+</svg>

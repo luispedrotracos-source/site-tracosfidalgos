@@ -1,1 +1,5 @@
-<svg width="220" height="64" viewBox="0 0 220 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><rect width="220" height="64" rx="32" fill="#111111"/><path d="M38 43V22H23V16H61V22H46V43H38Z" fill="#E6D8B8"/><path d="M70 43V16H103V22H78V27H99V33H78V43H70Z" fill="#E6D8B8"/><path d="M118 19H195" stroke="#E6D8B8" stroke-width="1.5" stroke-linecap="round"/><path d="M118 32H180" stroke="#E6D8B8" stroke-width="1.5" stroke-linecap="round"/><path d="M118 45H195" stroke="#E6D8B8" stroke-width="1.5" stroke-linecap="round"/></svg>
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TF Traços Fidalgos monogram">
+  <rect width="220" height="220" rx="110" fill="#15110E"/>
+  <path d="M46 68H116V91H94V154H70V91H46V68Z" fill="#F8F3EA"/>
+  <path d="M122 68H174V91H146V108H170V131H146V154H122V68Z" fill="#C5A15A"/>
+</svg>
