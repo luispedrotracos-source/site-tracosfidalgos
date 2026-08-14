@@ -9,3 +9,18 @@
 .book-download-section{background:rgba(255,255,255,.34)}.book-download-section .panel strong{font-family:var(--serif);font-size:clamp(24px,4vw,42px);line-height:1.05}.presentation-grid{grid-template-columns:repeat(2,1fr)}@media(max-width:760px){.presentation-grid{grid-template-columns:1fr}}
 
 .wa-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;flex:0 0 22px}.wa-icon svg{width:22px;height:22px;display:block;fill:currentColor}.whatsapp-float{gap:8px}
+
+/* Desktop hero refinement: lighter first fold, less empty desktop whitespace */
+@media (min-width:901px){
+  .hero{padding:clamp(44px,5.8vw,82px) 0 clamp(44px,5vw,70px)}
+  .hero-grid{grid-template-columns:minmax(0,.94fr) minmax(430px,1.06fr);gap:clamp(34px,4.2vw,58px);align-items:center}
+  .hero h1{font-size:clamp(54px,6.2vw,76px);line-height:.98;max-width:680px}
+  .hero .lead{font-size:clamp(17px,1.45vw,20px);max-width:620px;margin-top:18px}
+  .hero .actions{margin-top:24px}
+  .hero-media{min-height:455px}
+  .image-card.one,.hero-video-card{inset:0 2% 5% 0}
+  .image-card.two{width:38%;height:36%;border-width:7px}
+  .image-card.two.video-overlap{width:34%;height:30%}
+  .float-badge{left:-14px;bottom:6%;padding:13px 15px}
+  .float-badge strong{font-size:22px}
+}
