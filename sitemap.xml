@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://tracosfidalgos.pt/</loc></url>
-<url><loc>https://tracosfidalgos.pt/en/</loc></url>
-<url><loc>https://tracosfidalgos.pt/fr/</loc></url>
-<url><loc>https://tracosfidalgos.pt/catalogos/alta-costura.html</loc></url>
-<url><loc>https://tracosfidalgos.pt/catalogos/lencos.html</loc></url>
-<url><loc>https://tracosfidalgos.pt/catalogos/tailoring.html</loc></url>
-<url><loc>https://tracosfidalgos.pt/en/catalogues/haute-couture.html</loc></url>
-<url><loc>https://tracosfidalgos.pt/en/catalogues/scarves.html</loc></url>
-<url><loc>https://tracosfidalgos.pt/en/catalogues/tailoring.html</loc></url>
-<url><loc>https://tracosfidalgos.pt/fr/catalogues/haute-couture.html</loc></url>
-<url><loc>https://tracosfidalgos.pt/fr/catalogues/foulards.html</loc></url>
-<url><loc>https://tracosfidalgos.pt/fr/catalogues/tailoring.html</loc></url>
+  <url><loc>https://tracosfidalgos.pt/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/atelier/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/servicos/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/processo/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/catalogos/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/paris/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/contacto/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/en/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/en/atelier/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/en/services/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/en/process/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/en/catalogues/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/en/paris/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/en/contact/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/fr/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/fr/atelier/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/fr/services/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/fr/processus/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/fr/catalogues/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/fr/paris/</loc></url>
+  <url><loc>https://tracosfidalgos.pt/fr/contact/</loc></url>
 </urlset>
