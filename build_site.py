@@ -6,6 +6,19 @@ portfolio = json.loads((ROOT/'assets/portfolio/portfolio.json').read_text())
 
 WA = 'https://wa.me/351963194111?text=Ol%C3%A1%20Tra%C3%A7os%20Fidalgos%2C%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20confe%C3%A7%C3%A3o.'
 
+META_PIXEL_HEAD = """<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1317817327209822');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->"""
+META_PIXEL_NOSCRIPT = """<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1317817327209822&ev=PageView&noscript=1"></noscript>"""
+
 cats = [
  ('vestidos-silhuetas','Vestidos & silhuetas','Vestidos, silhuetas femininas e peças especiais com movimento, proporção e acabamento premium.'),
  ('blusas-camisas','Blusas & tops statement','Blusas, camisas e tops com volume, laços, textura e construção diferenciada.'),
@@ -24,7 +37,7 @@ def rel(prefix=''):
     return prefix
 
 def head(title, desc, prefix=''):
-    return f'''<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="https://tracosfidalgos.pt/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="{prefix}styles.css"></head><body id="top">'''
+    return f'''<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="https://tracosfidalgos.pt/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="{prefix}styles.css">{META_PIXEL_HEAD}</head><body id="top">{META_PIXEL_NOSCRIPT}'''
 
 def header(prefix=''):
     return f'''<header class="site-header"><div class="shell nav-wrap"><a class="brand" href="{prefix}"><img src="{prefix}assets/logo-tf.svg" alt="Traços Fidalgos"><span>Traços Fidalgos</span></a><button class="nav-toggle" aria-label="Menu">☰</button><nav class="nav"><a href="{prefix}atelier/">Atelier</a><a href="{prefix}servicos/">Serviços</a><a href="{prefix}catalogos/">Portfólio</a><a href="{prefix}processo/">Processo</a><a href="{prefix}paris/">Paris</a><a href="{prefix}contacto/">Contacto</a><a class="pill" href="{WA}">WhatsApp</a><span class="lang"><a href="{prefix}">PT</a><a href="{prefix}en/">EN</a><a href="{prefix}fr/">FR</a></span></nav></div></header>'''

@@ -2,6 +2,19 @@ from pathlib import Path
 import html, json
 ROOT=Path(__file__).parent
 WA='https://wa.me/351963194111?text=Hello%20Tra%C3%A7os%20Fidalgos%2C%20I%20would%20like%20to%20discuss%20a%20fashion%20production%20project.'
+
+META_PIXEL_HEAD = """<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1317817327209822');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->"""
+META_PIXEL_NOSCRIPT = """<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1317817327209822&ev=PageView&noscript=1"></noscript>"""
 portfolio=json.loads((ROOT/'assets/portfolio/portfolio.json').read_text())
 featured_ids={'tf-042','tf-043','tf-044','tf-045','tf-048','tf-049','tf-017','tf-053','tf-054'}
 featured=[x for x in portfolio if x['id'] in featured_ids][:9]
@@ -57,7 +70,7 @@ def links_for(lang, current):
 def head(lang,current,title,desc,prefix='../'):
     maps=links_for(lang,current); canon='https://tracosfidalgos.pt'+maps[lang]
     alts=''.join([f'<link rel="alternate" hreflang="{code if code!="pt" else "pt-PT"}" href="https://tracosfidalgos.pt{url}">' for code,url in maps.items()])
-    return f'<!doctype html><html lang="{ "en" if lang=="en" else "fr" }"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{canon}">{alts}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="{prefix}styles.css"></head><body id="top">'
+    return f'<!doctype html><html lang="{ "en" if lang=="en" else "fr" }"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{canon}">{alts}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="{prefix}styles.css">{META_PIXEL_HEAD}</head><body id="top">{META_PIXEL_NOSCRIPT}'
 
 def header(lang,current,prefix='../'):
     d=DATA[lang]; maps=links_for(lang,current); nav=d['nav']
