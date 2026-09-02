@@ -63,8 +63,9 @@ def header(lang,current,prefix='../'):
     d=DATA[lang]; maps=links_for(lang,current); nav=d['nav']
     return f'<header class="site-header"><div class="shell nav-wrap"><a class="brand" href="/{d["base"]}/"><img src="{prefix}assets/logo-tf.svg" alt="Traços Fidalgos"><span>Traços Fidalgos</span></a><button class="nav-toggle" aria-label="Menu">☰</button><nav class="nav"><a href="/{d["base"]}/{d["atelier"]}/">{nav["atelier"]}</a><a href="/{d["base"]}/{d["services"]}/">{nav["services"]}</a><a href="/{d["base"]}/{d["catalogues"]}/">{nav["portfolio"]}</a><a href="/{d["base"]}/{d["process"]}/">{nav["process"]}</a><a href="/{d["base"]}/paris/">{nav["paris"]}</a><a href="/{d["base"]}/{d["contact"]}/">{nav["contact"]}</a><a class="pill" href="/{d["base"]}/{d["contact"]}/">{nav["quote"]}</a><span class="lang"><a href="{maps["pt"]}">PT</a><a href="{maps["en"]}">EN</a><a href="{maps["fr"]}">FR</a></span></nav></div></header>'
 
-def footer(prefix='../'):
-    return f'<a class="whatsapp-float" href="{WA}" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="wa-icon">☎</span><span>WhatsApp</span></a><footer class="footer"><div class="shell"><span>© <span data-year></span> Traços Fidalgos</span><a href="#top">Top ↑</a></div></footer><script src="{prefix}script.js"></script></body></html>'
+def footer(prefix='../', lang=None):
+    privacy = '<a href="/fr/politique-de-confidentialite/">Politique de confidentialité</a>' if lang == 'fr' else ''
+    return f'<a class="whatsapp-float" href="{WA}" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="wa-icon">☎</span><span>WhatsApp</span></a><footer class="footer"><div class="shell"><span>© <span data-year></span> Traços Fidalgos</span>{privacy}<a href="#top">Top ↑</a></div></footer><script src="{prefix}script.js"></script></body></html>'
 
 def portfolio_grid(prefix='../', items=featured):
     out=['<div class="portfolio-grid">']
@@ -74,7 +75,7 @@ def portfolio_grid(prefix='../', items=featured):
 
 def page(lang,current,path,title,desc,body,prefix='../'):
     p=ROOT/path; p.parent.mkdir(parents=True,exist_ok=True)
-    p.write_text(head(lang,current,title,desc,prefix)+header(lang,current,prefix)+body+footer(prefix))
+    p.write_text(head(lang,current,title,desc,prefix)+header(lang,current,prefix)+body+footer(prefix, lang=lang))
 
 for lang,d in DATA.items():
     base=d['base']
@@ -99,7 +100,8 @@ for lang,d in DATA.items():
 # sitemap
 urls=['/','/atelier/','/servicos/','/processo/','/catalogos/','/paris/','/contacto/',
       '/en/','/en/atelier/','/en/services/','/en/process/','/en/catalogues/','/en/paris/','/en/contact/',
-      '/fr/','/fr/atelier/','/fr/services/','/fr/processus/','/fr/catalogues/','/fr/paris/','/fr/contact/']
+      '/fr/','/fr/atelier/','/fr/services/','/fr/processus/','/fr/catalogues/','/fr/paris/','/fr/contact/',
+      '/fr/politique-de-confidentialite/']
 sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join([f'  <url><loc>https://tracosfidalgos.pt{u}</loc></url>\n' for u in urls]) + '</urlset>\n'
 (ROOT/'sitemap.xml').write_text(sm)
 print('generated i18n pages', len(urls))
