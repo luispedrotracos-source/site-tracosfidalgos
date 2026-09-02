@@ -53,6 +53,13 @@ DATA={
  'email':'Email','whatsapp':'WhatsApp','brief':'Pour un devis','brief_p':'Envoyez type de pièce, quantités, matières, tailles, images de référence et délai souhaité.'
 }}
 
+# Preserve current EN/FR homepage content. Pedro wants the existing English/French homepages
+# kept as-is; only inner pages should be aligned structurally with Portuguese.
+PRESERVE_HOME = {}
+for _home in [ROOT/'en/index.html', ROOT/'fr/index.html']:
+    if _home.exists():
+        PRESERVE_HOME[str(_home.relative_to(ROOT))] = _home.read_text()
+
 def links_for(lang, current):
     d=DATA[lang]
     # current key maps to path for each language
@@ -117,4 +124,16 @@ urls=['/','/atelier/','/servicos/','/processo/','/catalogos/','/paris/','/contac
       '/fr/politique-de-confidentialite/']
 sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join([f'  <url><loc>https://tracosfidalgos.pt{u}</loc></url>\n' for u in urls]) + '</urlset>\n'
 (ROOT/'sitemap.xml').write_text(sm)
+
+# Keep non-home EN/FR pages structurally aligned with the richer PT pages.
+# The English and French homepages remain generated above with their existing content.
+try:
+    from sync_i18n_structure import sync as sync_i18n_structure
+    sync_i18n_structure()
+except Exception as exc:
+    print('warning: i18n structure sync failed:', exc)
+
+for _rel, _content in PRESERVE_HOME.items():
+    (ROOT/_rel).write_text(_content)
+
 print('generated i18n pages', len(urls))
