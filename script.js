@@ -32,8 +32,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     ['/contacto/', '/en/contact/', '/fr/contact/'],
     ['/catalogos/alta-costura.html', '/en/catalogues/haute-couture.html', '/fr/catalogues/haute-couture.html'],
     ['/catalogos/lencos.html', '/en/catalogues/scarves.html', '/fr/catalogues/foulards.html'],
-    ['/catalogos/tailoring.html', '/en/catalogues/tailoring.html', '/fr/catalogues/tailoring.html'],
-    ['/fr/politique-de-confidentialite/', '/fr/politique-de-confidentialite/', '/fr/politique-de-confidentialite/']
+    ['/catalogos/tailoring.html', '/en/catalogues/tailoring.html', '/fr/catalogues/tailoring.html']
   ];
   const langs = ['pt', 'en', 'fr'];
   const path = window.location.pathname.replace(/\/index\.html$/, '/');
