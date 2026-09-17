@@ -15,7 +15,7 @@ fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->"""
 META_PIXEL_NOSCRIPT = """<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1317817327209822&ev=PageView&noscript=1"></noscript>"""
-OPENAI_OAIQ_HEAD = """<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"QCN2o3Gjqudc834PJgugok",debug:true});</script>"""
+OPENAI_OAIQ_HEAD = """<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"QCN2o3Gjqudc834PJgugok",debug:true});oaiq("measure","page_viewed",{type:"contents"});</script>"""
 portfolio=json.loads((ROOT/'assets/portfolio/portfolio.json').read_text())
 featured_ids={'tf-042','tf-043','tf-044','tf-045','tf-048','tf-049','tf-017','tf-053','tf-054'}
 featured=[x for x in portfolio if x['id'] in featured_ids][:9]
