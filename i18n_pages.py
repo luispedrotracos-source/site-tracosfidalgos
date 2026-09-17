@@ -15,6 +15,7 @@ fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->"""
 META_PIXEL_NOSCRIPT = """<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1317817327209822&ev=PageView&noscript=1"></noscript>"""
+OPENAI_OAIQ_HEAD = """<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"QCN2o3Gjqudc834PJgugok",debug:true});</script>"""
 portfolio=json.loads((ROOT/'assets/portfolio/portfolio.json').read_text())
 featured_ids={'tf-042','tf-043','tf-044','tf-045','tf-048','tf-049','tf-017','tf-053','tf-054'}
 featured=[x for x in portfolio if x['id'] in featured_ids][:9]
@@ -77,7 +78,7 @@ def links_for(lang, current):
 def head(lang,current,title,desc,prefix='../'):
     maps=links_for(lang,current); canon='https://tracosfidalgos.pt'+maps[lang]
     alts=''.join([f'<link rel="alternate" hreflang="{code if code!="pt" else "pt-PT"}" href="https://tracosfidalgos.pt{url}">' for code,url in maps.items()])
-    return f'<!doctype html><html lang="{ "en" if lang=="en" else "fr" }"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{canon}">{alts}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="{prefix}styles.css"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">{META_PIXEL_HEAD}</head><body id="top">{META_PIXEL_NOSCRIPT}'
+    return f'<!doctype html><html lang="{ "en" if lang=="en" else "fr" }"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{canon}">{alts}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="{prefix}styles.css"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">{META_PIXEL_HEAD}{OPENAI_OAIQ_HEAD}</head><body id="top">{META_PIXEL_NOSCRIPT}'
 
 def header(lang,current,prefix='../'):
     d=DATA[lang]; maps=links_for(lang,current); nav=d['nav']
